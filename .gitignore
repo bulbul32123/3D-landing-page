@@ -18,15 +18,6 @@ yarn-error.log*
 
 # env files
 .env*
-/app
-/public
-/components
-/hooks
-/lib
-/styles
-/ui.png
-/package.json
-/package-lock.json
 
 # vercel
 .vercel
@@ -34,3 +25,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
