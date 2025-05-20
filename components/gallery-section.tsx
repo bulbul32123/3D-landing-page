@@ -37,17 +37,11 @@ const galleryItems = [
 
 function MasonryItem({ item, index }: { item: any; index: number }) {
   const ref = useRef<HTMLDivElement>(null)
-
-  // Track scroll progress relative to this specific item's viewport position
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   })
-
-  // 0% (enter) -> 20% (fully visible) -> 70% (start fading) -> 100% (faded to 3%)
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.7, 1], [0, 1, 1, 0.03])
-
-  // Add a slight Y movement for parallax feel
   const y = useTransform(scrollYProgress, [0, 1], [50, -50])
 
   return (
@@ -91,17 +85,6 @@ export default function GallerySection() {
   return (
     <section id="gallery" className="relative min-h-screen bg-lorenzo-dark text-lorenzo-text-light py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-        {/*
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="text-5xl md:text-7xl font-black uppercase mb-16 text-center"
-        >
-          MOMENTS
-        </motion.h2>
-        */}
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-auto">
           {galleryItems.map((item, index) => (
             <MasonryItem key={index} item={item} index={index} />
