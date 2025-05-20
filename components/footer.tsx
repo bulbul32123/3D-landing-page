@@ -21,9 +21,7 @@ export default function Footer() {
     <footer className="bg-lorenzo-accent pt-0 px-4 md:px-8 min-h-screen flex flex-col justify-end relative pb-5">
       <div className="absolute top-0 left-0 right-0 h-72 bg-gradient-to-b from-[#f5f1e8] to-lorenzo-accent z-0" />
 
-      {/* Main Dark Card Container */}
       <div className="relative flex-1 flex flex-col w-full max-w-[1688px] mx-auto mt-12 z-10">
-        {/* SVG Background Mask */}
         <div
           className="absolute inset-0 w-full h-full z-0 bg-[#282c20] overflow-hidden"
           style={{
@@ -35,7 +33,6 @@ export default function Footer() {
             WebkitMaskRepeat: "no-repeat",
           }}
         >
-          {/* <AnimatedTextureCanvas /> */}
 
           <div
             className="absolute inset-0 w-full h-full opacity-30"
@@ -47,12 +44,8 @@ export default function Footer() {
             }}
           />
         </div>
-
-        {/* Increased padding-x to push content inwards away from mask edges, and added padding-bottom to prevent overflow */}
         <div className="relative z-20 flex flex-col h-full px-8 md:px-24 py-12 md:py-20 md:pb-12 md:pl-0 md:pr-0">
-          {/* Main Content Grid */}
           <div className="flex-1 grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch mt-0">
-            {/* Left Column - Pages */}
             <div className="md:col-span-3 text-center order-2 md:order-1 md:pl-8 flex flex-col justify-center h-full">
               <h4 className="font-black text-xs uppercase mb-6 text-lorenzo-text-light/40 tracking-[0.2em]">PAGES</h4>
               <ul className="space-y-2">
@@ -76,10 +69,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-
-            {/* Center Column - Helmet & Title */}
             <div className="md:col-span-6 flex flex-col items-center justify-center order-1 md:order-2 relative">
-              {/* Typography Overlay - Increased top margin for more spacing */}
               <div className="absolute top-0 left-0 right-0 z-0 text-center transform -translate-y-1/4 md:-translate-y-0 mt-24">
                 <motion.h2
                   initial={{ opacity: 0, y: 20 }}
@@ -95,8 +85,6 @@ export default function Footer() {
                   </span>
                 </motion.h2>
               </div>
-
-              {/* 3D Helmet */}
               <div className="relative w-full h-[300px] md:h-[500px] z-10 mt-24 md:mt-24">
                 <Canvas>
                   <PerspectiveCamera makeDefault position={[0, 0, 6.5]} />
@@ -109,8 +97,6 @@ export default function Footer() {
                   <Environment preset="city" />
                 </Canvas>
               </div>
-
-              {/* CTA Button - Adjusted bottom position to be closer to helmet */}
               <motion.button
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -124,8 +110,6 @@ export default function Footer() {
                 </svg>
               </motion.button>
             </div>
-
-            {/* Right Column - Follow */}
             <div className="md:col-span-3 text-center order-3 md:order-2 md:pr-8 flex flex-col justify-center h-full">
               <h4 className="font-black text-xs uppercase mb-6 text-lorenzo-text-light/40 tracking-[0.2em]">
                 FOLLOW ON
@@ -144,17 +128,11 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-
-          {/* Partners Row */}
-          {/* Added mb-8 to ensure logos don't touch the bottom edge of the mask */}
           <div className="border-lorenzo-text-light/10 border-t-0 mb-0 mt-32 pt-0">
             <InfiniteLogoSlider />
           </div>
         </div>
       </div>
-
-      {/* Bottom Bar (Outside Card) */}
-      {/* Wrapped in max-w container to align perfectly with the card above */}
       <div className="w-full max-w-[1688px] mx-auto px-8 md:px-12 relative z-20 pt-0">
         <div className="flex flex-col md:flex-row justify-between items-center text-lorenzo-dark text-xs font-bold tracking-wider uppercase">
           <p>© 2025 Lorenzo. All rights reserved</p>
