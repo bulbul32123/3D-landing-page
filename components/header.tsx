@@ -20,7 +20,7 @@ export default function Header() {
         newColor = "white"
       }
 
-      const headerOffset = 100 // Approximate header height
+      const headerOffset = 100
 
       const masonry = document.getElementById("masonry-gallery")
       if (masonry) {
