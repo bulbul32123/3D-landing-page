@@ -21,8 +21,6 @@ export default function Helmet3DModel({ modelPath }: Helmet3DModelProps) {
     if (scene) {
       const box = new THREE.Box3().setFromObject(scene)
       const center = box.getCenter(new THREE.Vector3())
-
-      // Ajustar posição para centralizar o pivot
       scene.position.x = -center.x
       scene.position.y = -center.y
       scene.position.z = -center.z
@@ -42,14 +40,13 @@ export default function Helmet3DModel({ modelPath }: Helmet3DModelProps) {
 
   useEffect(() => {
     targetRotation.current = {
-      x: mousePosition.y * 0.15, // Inclinação vertical suave
-      y: mousePosition.x * 0.2, // Rotação horizontal suave
+      x: mousePosition.y * 0.15, 
+      y: mousePosition.x * 0.2,
     }
   }, [mousePosition])
 
   useFrame(() => {
     if (groupRef.current) {
-      // Lerp suave para movimento fluido
       currentRotation.current.x += (targetRotation.current.x - currentRotation.current.x) * 0.05
       currentRotation.current.y += (targetRotation.current.y - currentRotation.current.y) * 0.05
 
@@ -64,6 +61,4 @@ export default function Helmet3DModel({ modelPath }: Helmet3DModelProps) {
     </group>
   )
 }
-
-// Preload do modelo
 useGLTF.preload("/3d/helmet-lorenzo.glb")
