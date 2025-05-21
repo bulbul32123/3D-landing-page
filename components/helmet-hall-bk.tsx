@@ -33,8 +33,6 @@ export default function HelmetHall() {
   const containerRef = useRef<HTMLDivElement>(null)
   const x = useMotionValue(0)
   const springX = useSpring(x, { stiffness: 150, damping: 20 })
-
-  // Calculate item width based on screen size
   const getItemWidth = () => {
     if (typeof window === "undefined") return 300
     return window.innerWidth < 768 ? 220 : 350
@@ -71,11 +69,8 @@ export default function HelmetHall() {
       id="helmets"
       className="relative min-h-screen bg-lorenzo-dark overflow-hidden py-24 flex flex-col justify-center"
     >
-      {/* Background Texture & Lighting */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#1a1a1a] to-black opacity-80" />
       <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5 mix-blend-overlay" />
-
-      {/* Floor Perspective Grid */}
       <div
         className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black to-transparent opacity-50"
         style={{
@@ -88,7 +83,6 @@ export default function HelmetHall() {
       />
 
       <div className="relative z-10 max-w-[100vw] mx-auto px-4">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -101,8 +95,6 @@ export default function HelmetHall() {
             <span className="text-lorenzo-accent font-serif">HALL OF FAME</span>
           </h2>
         </motion.div>
-
-        {/* Carousel Container */}
         <div className="relative h-[500px] md:h-[600px] flex items-center justify-center perspective-1000">
           <motion.div
             ref={containerRef}
@@ -136,12 +128,9 @@ export default function HelmetHall() {
                   transition={{ duration: 0.4, ease: "easeOut" }}
                   onClick={() => setActiveIndex(index)}
                 >
-                  {/* Spotlight Effect for Active Item */}
                   {isActive && (
                     <div className="absolute -inset-20 bg-lorenzo-accent/10 rounded-full blur-3xl -z-10 animate-pulse" />
                   )}
-
-                  {/* Helmet Image */}
                   <div className="relative w-full h-full drop-shadow-2xl">
                     <Image
                       src={helmet.image || "/placeholder.svg"}
@@ -151,8 +140,6 @@ export default function HelmetHall() {
                       priority={distance < 2}
                     />
                   </div>
-
-                  {/* Reflection Effect */}
                   <div className="absolute -bottom-[100%] left-0 right-0 h-full opacity-40 pointer-events-none transform scale-y-[-1]">
                     <Image
                       src={helmet.image || "/placeholder.svg"}
@@ -170,8 +157,6 @@ export default function HelmetHall() {
             })}
           </motion.div>
         </div>
-
-        {/* Active Item Info */}
         <div className="relative h-32 mt-8 flex justify-center items-center overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
@@ -189,8 +174,6 @@ export default function HelmetHall() {
             </motion.div>
           </AnimatePresence>
         </div>
-
-        {/* Navigation Controls */}
         <div className="flex justify-center gap-8 mt-8">
           <button
             onClick={prevHelmet}
