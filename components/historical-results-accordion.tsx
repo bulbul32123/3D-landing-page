@@ -332,8 +332,6 @@ export function HistoricalResultsAccordion() {
             The new Motocross year is underway, view Lorenzo&#39;s schedule below.
           </p>
         </div>
-        {/* </CHANGE> */}
-
         <div className="flex flex-col gap-4">
           {historicalData.map((data) => (
             <div key={data.year} className="border-b border-white/10 last:border-none">
