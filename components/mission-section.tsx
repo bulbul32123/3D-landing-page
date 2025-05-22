@@ -63,19 +63,6 @@ export default function MissionSection() {
       className="relative min-h-screen bg-lorenzo-dark text-lorenzo-text-light py-24 flex items-center justify-center"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        
-        {/*
-        <div className="flex justify-center mb-12">
-          <div className="flex items-center gap-3 border-2 border-white/20 rounded-full px-6 py-3">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-lorenzo-accent">
-              <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
-              <path d="M8 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-            <span className="text-sm font-bold uppercase tracking-wider">TEAM LORENZO SINCE 2020</span>
-          </div>
-        </div>
-        */}
-
           <div className="relative h-32 flex items-center justify-center mt-16">
             <img
               src="/images/icon/ico-helmet-w.png"
@@ -100,26 +87,6 @@ export default function MissionSection() {
             ON AND OFF THE TRACK.
           </h2>
         </div>
-
-        {/* Signature animation */}
-        {/*
-        <div className="relative h-32 flex items-center justify-center mt-16">
-          
-          <svg width="400" height="150" viewBox="0 0 400 150" className="w-full max-w-md">
-            <motion.path
-              d="M30,75 Q60,40 110,75 T220,75 Q250,95 310,65 Q340,45 370,75 M200,90 Q220,110 250,90"
-              fill="none"
-              stroke="#c8f550"
-              strokeWidth="4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={signatureDrawn ? { pathLength: 1, opacity: 1 } : {}}
-              transition={{ duration: 2.5, ease: "easeInOut" }}
-            />
-          </svg>
-        </div>
-        */}
       </div>
     </section>
   )
