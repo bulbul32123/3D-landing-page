@@ -4,15 +4,6 @@ import type React from "react"
 import { useState, useRef, useEffect } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
-
-// --- AQUI É O SEGREDO DA MÁSCARA SVG ---
-// Você tem duas opções:
-// 1. Usar uma imagem da pasta public: `url('/images/minha-forma.svg')`
-// 2. Usar o SVG direto aqui (Data URI) como fiz abaixo.
-
-// Este é um exemplo de uma mancha de tinta/lama vetorial.
-// Se você tiver o SEU código SVG, você pode salvar um arquivo .svg na pasta public
-// e mudar essa linha para: const SVG_MASK = "url('/seu-arquivo.svg')"
 const SVG_MASK = `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 250' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='10' y='10' width='180' height='230' rx='20' ry='20' fill='%23000'/%3E%3C/svg%3E")`
 
 export function InteractiveClean() {
@@ -26,8 +17,6 @@ export function InteractiveClean() {
 
   const lastMousePos = useRef<{ x: number; y: number } | null>(null)
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 })
-
-  // Ajuste o tamanho do pincel conforme a sua forma
   const BRUSH_SIZE = 120
   const BRUSH_HARDNESS = 0.2
 
@@ -160,9 +149,6 @@ export function InteractiveClean() {
   }
 
   return (
-    // Container principal que segura a sombra
-    // Nota: Quando usamos Mask Image, o 'box-shadow' normal é cortado.
-    // Temos que usar 'filter: drop-shadow' para a sombra seguir a forma do SVG.
     <div
       className="relative w-full h-full"
       style={{
@@ -173,9 +159,6 @@ export function InteractiveClean() {
         ref={containerRef}
         className="relative w-full h-full select-none touch-none group cursor-none bg-gray-900"
         style={{
-          // --- AQUI A MÁGICA ACONTECE ---
-          // O WebkitMaskImage é para Chrome/Safari/Edge
-          // O MaskImage é para Firefox/Padrão
           WebkitMaskImage: SVG_MASK,
           maskImage: SVG_MASK,
 
