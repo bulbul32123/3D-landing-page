@@ -74,12 +74,8 @@ export default function MasonryGallerySection() {
     target: sectionRef,
     offset: ["start start", "end end"],
   })
-
-  // Background transition: Dark Green -> Dark Green -> White
   const backgroundColor = useTransform(scrollYProgress, [0, 0.6, 0.9], ["#282c20", "#ccc", "#ffffff"])
 
-  // Y Movement: Move grid up to reveal all images
-  // Starts at 0vh and moves up to -150vh to show bottom images
   const y = useTransform(scrollYProgress, [0, 1], ["0vh", "-150vh"])
 
   const column1 = galleryImages.filter((_, i) => i % 3 === 0)
@@ -105,14 +101,11 @@ export default function MasonryGallerySection() {
               ))}
             </div>
 
-            {/* Column 2 */}
             <div className="flex flex-col gap-8 w-full md:w-1/3">
               {column2.map((image, index) => (
                 <MasonryCard key={`col2-${index}`} image={image} index={index * 3 + 1} />
               ))}
             </div>
-
-            {/* Column 3 */}
             <div className="flex flex-col gap-8 w-full md:w-1/3">
               {column3.map((image, index) => (
                 <MasonryCard key={`col3-${index}`} image={image} index={index * 3 + 2} />
