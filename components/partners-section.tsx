@@ -1,7 +1,5 @@
 "use client"
-
 import { motion } from "framer-motion"
-
 const partners = ["HILTON", "UBER", "UYKART", "BELL", "PURE ELECTRIC", "GOOGLE", "RALPH LAUREN", "PLAYSTATION"]
 
 export default function PartnersSection() {
@@ -43,7 +41,6 @@ export default function PartnersSection() {
               />
             </svg>
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
