@@ -217,12 +217,8 @@ const scheduleData = [
     image: "/images/lorenzo-podio3.png",
   },
 ]
-
-// Function to get a random trophy (1-9) based on an ID to keep it consistent per render
 const getRandomTrophy = (id: number | string) => {
-  // Simple hash function to get a consistent number from string/number
   const val = typeof id === "string" ? Number.parseInt(id.replace(/\D/g, "") || "0") : id
-  // Use modulo 9 + 1 to get 1-9
   const trophyNum = (val % 9) + 1
   return `/images/trofeus/trofeu${trophyNum}.svg`
 }
