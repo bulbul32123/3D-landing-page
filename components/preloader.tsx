@@ -8,7 +8,6 @@ export default function Preloader() {
 
   useEffect(() => {
     document.body.style.overflow = "hidden"
-
     const timer = setTimeout(() => {
       setIsVisible(false)
       document.body.style.overflow = "unset"
@@ -35,12 +34,7 @@ export default function Preloader() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="relative flex items-baseline text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-tighter"
             >
-            {/*
-              <span className="font-[family-name:var(--font-oswald)]">AD</span>
-            */}
               <span className="font-brier ml-1">LORENZO</span>
-
-              {/* Stylized 'n' above */}
               <motion.span
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
