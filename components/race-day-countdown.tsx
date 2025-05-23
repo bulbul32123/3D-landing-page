@@ -10,7 +10,6 @@ const oswald = Oswald({
   subsets: ["latin"],
   variable: "--font-oswald",
 })
-
 export function RaceDayCountdown() {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -18,13 +17,10 @@ export function RaceDayCountdown() {
     minutes: 0,
     seconds: 0,
   })
-
   useEffect(() => {
-    // Set target date to next race (simulated)
     const targetDate = new Date()
-    targetDate.setDate(targetDate.getDate() + 7) // 7 days from now
+    targetDate.setDate(targetDate.getDate() + 7)
     targetDate.setHours(14, 0, 0, 0)
-
     const interval = setInterval(() => {
       const now = new Date().getTime()
       const distance = targetDate.getTime() - now
@@ -47,19 +43,15 @@ export function RaceDayCountdown() {
 
   return (
     <div className="w-full overflow-hidden relative py-20 md:py-32">
-      {/* Background Gradient - Radial center gray to dark #111112 */}
       <div className="absolute inset-0 z-0" />
 
       <div className="container mx-auto px-4 relative z-10 flex flex-col items-center justify-center min-h-[300px] md:min-h-[400px]">
-        {/* Countdown Numbers */}
         <div className="flex flex-wrap justify-center gap-1 md:gap-4 relative z-20">
           <TimeUnit value={timeLeft.days} label="D" />
           <TimeUnit value={timeLeft.hours} label="H" />
           <TimeUnit value={timeLeft.minutes} label="M" />
           <TimeUnit value={timeLeft.seconds} label="S" />
         </div>
-
-        {/* Race Day SVG Overlay - Positioned absolute center */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
