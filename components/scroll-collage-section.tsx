@@ -1,5 +1,4 @@
 "use client"
-
 import { useRef } from "react"
 import Image from "next/image"
 import { motion, useScroll, useTransform } from "framer-motion"
@@ -67,7 +66,6 @@ export default function ScrollCollageSection() {
     <section ref={ref} className="relative h-[240vh]">
       <div className="sticky top-0 h-screen">
         <motion.div className="absolute inset-0 -z-10" style={{ backgroundColor }} />
-
         <motion.div
           style={{ x: containerX, y: containerY }}
           className="absolute top-[50vh] left-[50vw] w-[3000px] h-[3000px] will-change-transform"
