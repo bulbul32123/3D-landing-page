@@ -128,17 +128,13 @@ function HotspotPoint({ spot, isActive, onHover, onLeave }: HotspotPointProps) {
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="absolute top-full mt-4 left-1/2 -translate-x-1/2 z-50 w-[320px] md:w-[360px]"
           >
-            {/* Connector Line */}
             <div className="absolute -top-4 left-1/2 w-px h-4 bg-gradient-to-b from-transparent to-lorenzo-accent/50" />
             <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-lorenzo-accent rounded-full shadow-[0_0_10px_#a3e635]" />
 
-            {/* Card Container - Glassmorphism & Tech Borders */}
             <div className="relative overflow-hidden rounded-lg bg-black/80 backdrop-blur-xl border border-white/10 shadow-2xl">
-              {/* Decorative Tech Lines */}
               <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-lorenzo-accent/50 to-transparent opacity-50" />
               <div className="absolute bottom-0 right-0 w-16 h-16 bg-lorenzo-accent/5 blur-[50px]" />
 
-              {/* Header */}
               <div className="flex items-center justify-between px-5 py-3 border-b border-white/5 bg-white/5">
                 <div className="flex items-center gap-2">
                   {getCategoryIcon(spot.category)}
@@ -149,7 +145,6 @@ function HotspotPoint({ spot, isActive, onHover, onLeave }: HotspotPointProps) {
                 <div className="text-[10px] font-mono text-white/40">SYS.ID.{spot.id.toString().padStart(3, "0")}</div>
               </div>
 
-              {/* Content */}
               <div className="p-5">
                 <h3 className="text-xl font-bold text-white mb-2 font-[family-name:var(--font-oswald)] uppercase tracking-wide">
                   {spot.label}
@@ -158,7 +153,6 @@ function HotspotPoint({ spot, isActive, onHover, onLeave }: HotspotPointProps) {
                   {spot.description}
                 </p>
 
-                {/* Tech Stats Grid */}
                 <div className="grid grid-cols-2 gap-3">
                   {spot.stats.map((stat, idx) => (
                     <div
@@ -174,7 +168,6 @@ function HotspotPoint({ spot, isActive, onHover, onLeave }: HotspotPointProps) {
                 </div>
               </div>
 
-              {/* Footer Decor */}
               <div className="absolute bottom-2 right-2 flex gap-0.5 opacity-30">
                 <div className="w-1 h-1 bg-lorenzo-accent rounded-full" />
                 <div className="w-1 h-1 bg-white rounded-full" />
@@ -209,7 +202,6 @@ export default function RiderTechSection() {
           <div className="relative w-full aspect-[4/3] md:aspect-[3/2]">
             <Image src="/images/lorenzo-pose33.jpg" alt="Lorenzo Tech Specs" fill className="object-contain" priority />
 
-            {/* Hotspots overlay */}
             {hotspots.map((spot) => (
               <HotspotPoint
                 key={spot.id}
@@ -221,7 +213,6 @@ export default function RiderTechSection() {
             ))}
           </div>
 
-          {/* Mobile instruction hint */}
           <div className="md:hidden text-center mt-8 text-gray-500 text-sm">
             Tap on the pulsating points to see the information
           </div>
