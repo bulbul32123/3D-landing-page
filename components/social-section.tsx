@@ -1,5 +1,4 @@
 "use client"
-
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { useState, useEffect } from "react"
@@ -8,10 +7,10 @@ const socialImages = [
   "/images/lofan/lofan2.jpg",
   "/images/lorenzo-piloto2.png",
   "/images/lorenzo-piloto3.png",
-  "/images/lofan/lofan8.jpg", // Center image
+  "/images/lofan/lofan8.jpg", 
   "/images/lorenzo-piloto5.png",
-  "/images/lorenzo-piloto1.png", // Added to reach 7
-  "/images/lorenzo-col.jpg", // Added to reach 7
+  "/images/lorenzo-piloto1.png",
+  "/images/lorenzo-col.jpg",
 ]
 
 const handIcons = [
@@ -37,7 +36,6 @@ export default function SocialSection() {
     <section id="social-section" className="relative bg-[#F5F1E8] text-black py-24 px-6 md:px-12 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="relative h-32 flex items-center justify-center mt-16">
-          {/* Replaced static image with animated icon switcher */}
           <div className="relative h-full w-auto max-h-[60px] aspect-square">
             {handIcons.map((icon, index) => (
               <div
@@ -82,10 +80,10 @@ export default function SocialSection() {
               initial={{ opacity: 0, rotate: 0, scale: 0 }}
               whileInView={{
                 opacity: 1,
-                rotate: (i - 3) * 6, // Adjusted rotation for 7 items (centered at index 3)
-                scale: 1 - Math.abs(i - 3) * 0.02, // Reduced scale drop-off
-                x: (i - 3) * 90, // Tighter horizontal overlap
-                y: Math.abs(i - 3) * 35, // Adjusted vertical curve
+                rotate: (i - 3) * 6, 
+                scale: 1 - Math.abs(i - 3) * 0.02, 
+                x: (i - 3) * 90, 
+                y: Math.abs(i - 3) * 35,
               }}
               transition={{
                 duration: 0.8,
@@ -103,7 +101,7 @@ export default function SocialSection() {
                 transition: { duration: 0.3 },
               }}
               className="absolute w-60 md:w-80 h-80 md:h-[480px] bg-white rounded-3xl shadow-2xl overflow-hidden cursor-pointer origin-bottom"
-              style={{ zIndex: 10 - Math.abs(i - 3) }} // Adjusted z-index logic for 7 items
+              style={{ zIndex: 10 - Math.abs(i - 3) }} 
             >
               <div className="relative w-full h-full">
                 <Image src={image || "/placeholder.svg"} alt={`Social post ${i + 1}`} fill className="object-cover" />
