@@ -6,7 +6,6 @@ import { motion } from "framer-motion"
 export default function TestimonialSection() {
   return (
     <section className="relative min-h-screen bg-[#1a1f1a] overflow-hidden flex items-center">
-      {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/lorenzo-piloto.png"
@@ -19,9 +18,7 @@ export default function TestimonialSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left Column: Quote Content */}
           <div className="w-full order-2 lg:order-1">
-            {/* Decorative quote mark */}
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -36,7 +33,6 @@ export default function TestimonialSection() {
               </svg>
             </motion.div>
 
-            {/* Main quote */}
             <motion.blockquote
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +50,6 @@ export default function TestimonialSection() {
               </p>
             </motion.blockquote>
 
-            {/* Author */}
             <motion.footer
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -68,8 +63,6 @@ export default function TestimonialSection() {
               </div>
             </motion.footer>
           </div>
-
-          {/* Right Column: Restored basic image placeholder to clear InteractiveClean usage */}
           <div className="order-1 lg:order-2 w-full aspect-[4/5] md:aspect-square relative max-w-lg mx-auto lg:mx-0">
             <Image
               src="/images/lorenzo-piloto.png"
